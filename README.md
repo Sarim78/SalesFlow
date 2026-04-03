@@ -219,6 +219,26 @@ http://localhost:8501
 
 ---
 
+### Step 9 — Open in Power BI (Optional)
+
+1. Download and install Power BI Desktop (free)
+   https://powerbi.microsoft.com/desktop
+
+2. Open Power BI Desktop
+
+3. Click Get Data → PostgreSQL database
+
+4. Enter your connection details:
+   - Server: localhost
+   - Database: salesflow
+
+5. Select the sales table and click Load
+
+6. Open the included salesflow.pbix file
+   (File → Open → salesflow.pbix)
+
+---
+
 ## SQL Analytics
 
 The `sql/` directory contains four optimized queries that answer core business questions:
