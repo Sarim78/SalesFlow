@@ -111,8 +111,8 @@ pip --version         # should output pip 23.x or higher
 ### Step 2 — Clone the Repository
 
 ```bash
-git clone https://github.com/Sarim78/salesflow.git
-cd salesflow
+git clone https://github.com/Sarim78/SalesFlow.git
+cd SalesFlow
 ```
 
 ---
@@ -226,16 +226,15 @@ http://localhost:8501
 
 2. Open Power BI Desktop
 
-3. Click Get Data → PostgreSQL database
+3. Click **Get Data** → **PostgreSQL database**
 
 4. Enter your connection details:
-   - Server: localhost
-   - Database: salesflow
+   - Server: `localhost`
+   - Database: `salesflow`
 
-5. Select the sales table and click Load
+5. Select the `sales` table and click **Load**
 
-6. Open the included salesflow.pbix file
-   (File → Open → salesflow.pbix)
+6. Open the included `salesflow.pbix` file via **File → Open → salesflow.pbix**
 
 ---
 
@@ -256,11 +255,11 @@ The `sql/` directory contains four optimized queries that answer core business q
 
 The Streamlit dashboard includes:
 
-- **Revenue Over Time** --> Line chart with monthly granularity
-- **Top Categories** --> Bar chart ranked by total sales
-- **Customer Segments** --> Breakdown by age group and gender
-- **KPI Cards** --> Total revenue, average order value, total transactions
-- **Filters** --> Date range, product category, customer segment
+- **Revenue Over Time** — Line chart with monthly granularity
+- **Top Categories** — Bar chart ranked by total sales
+- **Customer Segments** — Breakdown by age group and gender
+- **KPI Cards** — Total revenue, average order value, total transactions
+- **Filters** — Date range, product category, customer segment
 
 ---
 
