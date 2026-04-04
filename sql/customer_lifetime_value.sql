@@ -10,12 +10,12 @@ SELECT
     gender,
     age,
     age_group,
-    COUNT(transaction_id)               AS total_transactions,
-    SUM(total_amount)                   AS lifetime_value,
-    ROUND(AVG(total_amount), 2)         AS avg_order_value,
-    SUM(quantity)                       AS total_units_purchased,
-    MIN(date)                           AS first_purchase_date,
-    MAX(date)                           AS last_purchase_date
+    COUNT(transaction_id) AS total_transactions,
+    SUM(total_amount) AS lifetime_value,
+    ROUND(AVG(total_amount), 2) AS avg_order_value,
+    SUM(quantity) AS total_units_purchased,
+    MIN(date) AS first_purchase_date,
+    MAX(date) AS last_purchase_date
 FROM
     sales
 GROUP BY
