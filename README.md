@@ -74,26 +74,17 @@ salesflow/
 
 ## Getting Started
 
-> **Windows users:** Just double-click `setup.bat` — it handles everything automatically. Make sure your `.env` file is configured first (see Step 3 below).
-
-If you prefer to run manually, follow these steps:
+> **Windows users:** Double-click `setup.bat` and it handles Steps 1–5 automatically. Just make sure you complete Step 3 first.
 
 ---
 
-### Prerequisites
+### What You Need
 
-| Tool | Version | Download |
-|------|---------|----------|
-| Python | 3.11+ | https://python.org/downloads |
-| PostgreSQL | 15+ | https://www.postgresql.org/download |
-| Power BI Desktop | latest | https://powerbi.microsoft.com/desktop |
+Download and install these before starting:
 
-Verify your installations:
-
-```
-python --version
-psql --version
-```
+- **Python 3.11+** — https://python.org/downloads
+- **PostgreSQL 15+** — https://www.postgresql.org/download
+- **Power BI Desktop** — https://powerbi.microsoft.com/desktop
 
 ---
 
@@ -106,7 +97,7 @@ cd SalesFlow
 
 ---
 
-### Step 2 — Create a Virtual Environment and Install Dependencies
+### Step 2 — Install Dependencies
 
 ```
 python -m venv venv
@@ -116,23 +107,21 @@ pip install -r requirements.txt
 
 ---
 
-### Step 3 — Configure Environment Variables
+### Step 3 — Add Your Database Credentials
 
-Create a `.env` file in the root of the project folder:
+Create a file called `.env` in the project root and fill in your PostgreSQL details:
 
 ```
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=salesflow
-DB_USER=your_postgres_username
-DB_PASSWORD=your_postgres_password
+DB_USER=postgres
+DB_PASSWORD=your_password_here
 ```
-
-> **Note:** Never commit this file to GitHub. It is already listed in `.gitignore`.
 
 ---
 
-### Step 4 — Set Up the PostgreSQL Database
+### Step 4 — Create the Database
 
 ```
 psql -U postgres -c "CREATE DATABASE salesflow;"
@@ -141,32 +130,23 @@ psql -U postgres -d salesflow -f sql/schema.sql
 
 ---
 
-### Step 5 — Run the ETL Pipeline
+### Step 5 — Run the Pipeline
 
 ```
 python main.py
 ```
 
-Expected output:
-
-```
-[EXTRACT] Loading raw data from data/raw/retail_sales_dataset.csv...
-[TRANSFORM] Cleaning and engineering features...
-[LOAD] Writing 1000 records to PostgreSQL...
-[DONE] Pipeline completed successfully.
-```
+This loads your data into PostgreSQL automatically.
 
 ---
 
-### Step 6 — Connect Power BI to PostgreSQL
+### Step 6 — Open in Power BI
 
 1. Open **Power BI Desktop**
 2. Click **Get Data** → **PostgreSQL database**
-3. Enter your connection details:
-   - Server: `localhost`
-   - Database: `salesflow`
-4. Select the `sales` table and click **Load**
-5. Build your visuals using the loaded data
+3. Enter `localhost` as the server and `salesflow` as the database
+4. Select the `sales` table → click **Load**
+5. Build your visuals
 
 ---
 
