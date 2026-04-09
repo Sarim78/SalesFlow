@@ -82,9 +82,9 @@ salesflow/
 
 Download and install these before starting:
 
-- **Python 3.11+** — https://python.org/downloads
-- **PostgreSQL 15+** — https://www.postgresql.org/download
-- **Power BI Desktop** — https://powerbi.microsoft.com/desktop
+- **Python 3.11+** --> https://python.org/downloads
+- **PostgreSQL 15+** --> https://www.postgresql.org/download
+- **Power BI Desktop** --> https://powerbi.microsoft.com/desktop
 
 ---
 
@@ -140,13 +140,23 @@ This loads your data into PostgreSQL automatically.
 
 ---
 
-### Step 6 — Open in Power BI
+### Step 6 — Connect to Power BI
+
+**Before connecting, install the PostgreSQL driver for Power BI:**
+Download and install **Npgsql** — https://github.com/npgsql/npgsql/releases
+Restart Power BI after installing.
 
 1. Open **Power BI Desktop**
-2. Click **Get Data** → **PostgreSQL database**
-3. Enter `localhost` as the server and `salesflow` as the database
-4. Select the `sales` table → click **Load**
-5. Build your visuals
+2. Click **Home** → **Get Data** → search for **PostgreSQL** → click **Connect**
+3. Enter the following:
+   - Server: `localhost`
+   - Database: `salesflow`
+4. Click **OK**
+5. When prompted for credentials, select the **Database** tab and enter:
+   - Username: `postgres`
+   - Password: *(the password you set during PostgreSQL installation)*
+6. Select the `sales` table from the list → click **Load**
+7. Your data is now loaded — drag fields from the right panel onto the canvas to build visuals
 
 ---
 
@@ -167,5 +177,11 @@ This loads your data into PostgreSQL automatically.
 
 - 1,000 transaction records
 - Fields: `Transaction ID`, `Date`, `Customer ID`, `Gender`, `Age`, `Product Category`, `Quantity`, `Price per Unit`, `Total Amount`
+
+---
+
+## License
+
+This project is licensed under the MIT License.
 
 ---
